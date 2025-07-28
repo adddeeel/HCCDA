@@ -1,0 +1,98 @@
+# 🧪 Huawei Cloud Compute Service Lab (Simplified Guide)
+
+**Goal:** Create and manage **Windows** and **Linux ECS** (Elastic Cloud Servers) on Huawei Cloud in a clear, step-by-step way.
+
+---
+
+## ✅ Step 1: Create Windows and Linux ECS
+
+### 1.1 Create a Virtual Private Cloud (VPC)
+
+1. Log in to Huawei Cloud (**AP-Singapore** region).  
+2. Go to **Virtual Private Cloud** > click **Create VPC**  
+3. Set the following:
+   - **VPC Name:** `vpc-WP`
+   - **IPv4 CIDR Block:** `192.168.0.0/16`
+   - **Subnet Name:** `subnet-WP`
+   - **Subnet CIDR Block:** `192.168.0.0/24`
+
+---
+
+### 1.2 Create a Windows ECS
+
+1. Go to **Compute** > **Elastic Cloud Server** > click **Buy ECS**
+2. Set:
+   - **Billing:** Pay-per-use
+   - **OS:** Windows Server 2012 R2
+   - **Specs:** 2 vCPU, 4 GB RAM
+   - **Disk:** 40 GB
+   - **Login Mode:** Password (e.g., `Huawei@1234`)
+
+---
+
+### 1.3 Create a Linux ECS
+
+Use the same steps as for the Windows ECS, but modify:
+
+- **OS:** CentOS 7.6  
+- **Login Mode:** Password  
+- **EIP (Elastic IP):** Auto assign
+
+---
+
+## ✅ Step 2: Log in to ECS
+
+### Windows ECS Login
+
+1. Go to the ECS page > click **Remote Login**
+2. Click **Send Ctrl+Alt+Del** and enter your password
+
+### Linux ECS Login
+
+1. Go to the ECS page > click **Remote Login**
+2. Login using:
+   - **Username:** `root`
+   - **Password:** `Huawei@123`
+
+---
+
+## ✅ Step 3: Modify ECS Specs
+
+1. **Stop the ECS**
+2. Click **More** > **Modify Specifications**
+3. Change RAM (e.g., from **4 GB to 8 GB**)
+4. **Start the ECS** again
+
+---
+
+## ✅ Step 4: Create a System Disk Image (Windows)
+
+### 4.1 Prepare the Windows ECS
+
+- Enable **DHCP**
+- Allow **remote connections**
+- Enable **Remote Desktop** in the firewall
+- Check if **Cloudbase-Init** is installed
+
+### 4.2 Create the Image
+
+1. Go to **Image Management Service**
+2. Click **Create Image**:
+   - **Type:** System disk image
+   - **Source:** Your Windows ECS
+   - **Name:** `image-windows2012`
+
+---
+
+## ✅ Step 5: Create a System Disk Image (Linux)
+
+### 5.1 Prepare the Linux ECS
+
+- Ensure **DHCP** is configured
+- Check or install:
+  - `CloudResetPwdAgent`
+  - `Cloud-Init`
+- Delete old network rule files:
+
+  ```bash
+  ls -l /etc/udev/rules.d
