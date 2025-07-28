@@ -1,4 +1,4 @@
-## 📌 Table of Contents
+##  Table of Contents
 
 - [Step 1: Create Windows and Linux ECS](#step-1-create-windows-and-linux-ecs)
   - [1.1 Create a Virtual Private Cloud (VPC)](#11-create-a-virtual-private-cloud-vpc)
@@ -13,7 +13,7 @@
 
 ---
 
-## ✅ Step 1: Create Windows and Linux ECS
+##  Step 1: Create Windows and Linux ECS
 
 ### 1.1 Create a Virtual Private Cloud (VPC)
 
@@ -50,7 +50,7 @@ Repeat the same steps as Windows ECS, with the following changes:
 
 ---
 
-## ✅ Step 2: Log in to ECS
+## Step 2: Log in to ECS
 
 ### Windows ECS
 
@@ -66,7 +66,7 @@ Repeat the same steps as Windows ECS, with the following changes:
 
 ---
 
-## ✅ Step 3: Modify ECS Specs
+## step 3: Modify ECS Specs
 
 1. **Stop** the ECS instance.
 2. Click **More > Modify Specifications**.
@@ -75,7 +75,7 @@ Repeat the same steps as Windows ECS, with the following changes:
 
 ---
 
-## ✅ Step 4: Create a System Disk Image (Windows)
+## ✅Step 4: Create a System Disk Image (Windows)
 
 ### 4.1 Prepare Windows ECS
 
@@ -94,7 +94,7 @@ Repeat the same steps as Windows ECS, with the following changes:
 
 ---
 
-## ✅ Step 5: Create a System Disk Image (Linux)
+##  Step 5: Create a System Disk Image (Linux)
 
 ### 5.1 Prepare Linux ECS
 
@@ -117,14 +117,14 @@ Source: ecs-linux
 
 Name: image-centos7.6
 
-✅ Step 6: Share Private Image
+Step 6: Share Private Image
 Get your Project ID from My Credentials.
 
 Go to Private Images > Click More > Share.
 
 Add the Project ID and click OK.
 
-✅ Step 7: Add Tenants to Shared Image
+Step 7: Add Tenants to Shared Image
 Go to Private Images > click the image name.
 
 Under Shared with Tenants, click Add Tenant.
